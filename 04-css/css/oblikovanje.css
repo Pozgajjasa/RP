@@ -29,7 +29,8 @@ a:active { color:#990000; outline:none; }
 
 code {
     font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-    color: #009966;
+    color: #10cc8d;
+    background-color: #DDDDDD;
 }
 
 h1 {
@@ -40,7 +41,7 @@ h2 {.box {
   margin: 1px;
   margin-top: 2em;
   padding: 0.5em;
-  color:#AAAAAA;
+  color:#000000;
   font-style: solid;
 }}
 
@@ -49,14 +50,37 @@ h2 {.box {
     background-color: rgb(51, 0, 102, 0.1);
 }
 
-.slika img {
-  border-style: solid;
-  border-color: red;
-  font-size: 0.9em;
-  width: 100%;
-  height: auto;
-  text-align: left;
-  float: right;
-  margin-left: 2em;
+#ostalo {
+    padding: 2em;
+    background-color:#DDDDDD;
 }
+
+.slika {
+  font-size: 0.9em;     /* nekoliko manjša pisava */
+  width: 40%;           /* element naj zaseda 40% širine nadrejenega elementa */
+  text-align: left;
+  float: right;   
+  margin-left: 2em;  
+}
+
+.slika p:last-child  {
+    font-size: 0.8em;
+    
+}
+
+.slika p:last-child ::before {
+    content: "🔗";
+}
+
+
+.slika p:nth-child(1n) {
+    margin-top: 0px
+}
+
+.slika img {
+  width: 100%;   /* slika zavzame celotno širino svojega starša */
+  height: auto;  /* višina se samodejno prilagodi, da se ohrani razmerje */
+  border-radius: 20%;
+}
+
 
