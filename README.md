@@ -1,6 +1,9 @@
 # Računalniški praktikum
-## Bližnjice:
-```Alt + Tab``` (Ukaz za hitro preklapljanje med aplikacijami.)  
-```Ctrl + Shift + P``` (Ukaz za odpiranje ukazne vrstice (Command Palette) v programu.)  
-```Ctrl + S``` (Ukaz za shranjevanje trenutnega dokumenta ali datoteke.)
 
+Repozitorij vsebuje moje vaje in zapiske pri predmetu **Računalniški praktikum** na [FMF UL](https://www.fmf.uni-lj.si/).
+
+## 👨‍💻 O meni
+**Ime:** Jaša Požgaj  
+**Študijsko leto:** 2025/26  
+**Predmet:** Računalniški praktikum  
+**Namen repozitorija:** shranjevanje vaj, nalog in primerov kode, izdelanih med semestrom.
