@@ -7,4 +7,5 @@ Repozitorij vsebuje moje vaje in zapiske pri predmetu **Računalniški praktikum
 **Smer:** Finančna matematika  
 **Študijsko leto:** 2025/26  
 **Predmet:** Računalniški praktikum  
-**Namen repozitorija:** shranjevanje vaj, nalog in primerov kode, izdelanih med semestrom.
+**Namen repozitorija:** shranjevanje vaj, nalog in primerov kode, izdelanih med semestrom.  
+**Spletna stran**: [pozgajjasa.github.io](https://pozgajjasa.github.io/) 
