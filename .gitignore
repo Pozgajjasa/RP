@@ -1,3 +1,6 @@
+# VSCode uporabniške nastavitve
+.vscode/
+
 # LaTeX
 *.aux
 *.bbl
