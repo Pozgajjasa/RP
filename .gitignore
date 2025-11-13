@@ -12,4 +12,5 @@
 *.out
 *.pyc
 *.synctex.gz
-
+*.snm
+*.nav
