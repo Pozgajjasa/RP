@@ -3,20 +3,21 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage{amsmath}
-\usepackage{amsthm}
+\usepackage{booktabs}
 \usepackage{url}
 \usepackage{graphicx}
-\usepackage{booktabs}
+\usepackage{amsthm}
+\usepackage{color}
+\usepackage{xcolor}
 
 {\theoremstyle{plain}
-   \newtheorem{izrek}{Izrek}[section]
+\newtheorem{izrek}{Izrek}[section]
 }
 {\theoremstyle{definition}
-   \newtheorem{definicija}{Definicija}[section]
-}
+\newtheorem{definicija}[izrek]{Definicija}
+} 
+
 \newcommand{\m}{M_2}
-\newcommand{\pojem}[1]{\emph{#1}}
 
 % Nastavimo koliko prostora izpustimo pod napisom nad sliko ali tabelo.
 \setlength{\belowcaptionskip}{2mm}
@@ -28,12 +29,20 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \title{Magični kvadrati}
-\author{}
+\date{}
 % 1. naloga
 % Glavo dokumenta popravite tako, da se ne bo izpisal datum.
 % To naredite tako, da za ukazom `\title` dodate ukaz `\date{}`.
 
-\date{}
+\newcommand{\pojem}[1]{\emph{#1}}
+
+\newenvironment{magic}[3]{\begin{table}[!ht]
+      \centering
+      \caption{#1}
+      \Large
+      \label{#3}
+      \begin{tabular}{|*{#2}{c|}}\hline}{\end{tabular}
+   \end{table}}
 
 \begin{document}
 
@@ -47,7 +56,6 @@
 \begin{center}
    \includegraphics{slika.pdf}
 \end{center}
-
 Prirejeno iz virov:
 
 % 3. naloga
@@ -61,10 +69,11 @@ Prirejeno iz virov:
    \item \url{http://en.wikipedia.org/wiki/Magic_square}
 \end{itemize}
 
+\tableofcontents
+
 % 4. naloga
 % Na tem mestu uporabite ukaz, ki izpiše kazalo vsebine.
 % Poiščite ga na spletu: po angleško se kazalu vsebine reče "table of contents".
-\tableofcontents
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Konec prvega sklopa nalog
@@ -75,30 +84,38 @@ Prirejeno iz virov:
 
 \section{Uvod}
 
- \begin{definicija}
+\begin{definicija}
    \pojem{Magični kvadrat} reda $n$ je nabor $n^2$ različnih števil,
    ki so razvrščena v kvadratno tabelo tako, da vedno dobimo enako vsoto,
    če seštejemo vsa števila poljubne vrstice, vsa števila poljubnega
    stolpca ali vsa števila v katerikoli od glavnih diagonal.
- \end{definicija}
+\end{definicija}
 
-Primer magičnega kvadrata reda 3 je prikazan v tabeli ?!?.
+% oznaka za sklic je \ref !!!
+% če želimo pa dati oznako, pa se da \label !!!
+
+Primer magičnega kvadrata reda 3 je prikazan v tabeli \ref{table:mag3}.
 
 % - napis nad tabelo: Magični kvadrat reda 3
 % - oznaka: table:mag3
 % Začetek magičnega kvadrata
-%   8 & 1 & 6 \\\hline
-%   3 & 5 & 7 \\\hline
-%   4 & 9 & 2 \\\hline
+   
+   \begin{magic}{Magični kvadrat reda 3}{3}{magicni kvadrat reda 3}
+      \label{table:mag3}
+         8 & 1 & 6 \\\hline
+         3 & 5 & 7 \\\hline
+         4 & 9 & 2 \\\hline
+   \end{magic}
 % Konec magičnega kvadrata
 
- \begin{definicija}
+\begin{definicija}
+   \label{eq:numbers}
    Magični kvadrat reda $n$ je \pojem{normalen}, če v njem nastopajo števila
    \begin{equation}
       % oznaka: eq:numbers
       1, 2, 3, \ldots, n^2-1, n^2.
    \end{equation}
- \end{definicija}
+\end{definicija}
 
 Magični kvadrat v tabeli ?!? je normalen.
 To je tudi najmanjši netrivialen normalen magični kvadrat.
@@ -161,7 +178,7 @@ v Khajurahu v Indiji in v Enciklopediji Bratovščine Čistosti iz enajstega
 ali dvanajstega stoletja. Vrh vsega gre celo za ">panmagični kvadrat"<.
 V Evropi sta morda najbolj znana naslednja magična kvadrata reda 4:
 
-Magični kvadrat v litografiji Melancholia I (glej sliko~\ref{fig:durer}
+Magični kvadrat v litografiji Melancholia I (glej sliko ??
 za izsek s kvadratom) Albrechta Dürerja naj bi bil najzgodnejši magični kvadrat
 v evropski umetnosti. Zelo podoben je kvadratu Yang Huija, ki je nastal na Kitajskem
 približno 250 let pred Dürerjevim časom. % sklic: fig:durer
@@ -178,7 +195,6 @@ približno 250 let pred Dürerjevim časom. % sklic: fig:durer
    \label{fig:durer}
 \end{figure}
 
-
 Vsoto 34 je mogoče najti pri seštevanju števil v vsaki vrstici, vsakem stolpcu,
 na vsaki diagonali, v vsakem od štirih kvadrantov, v sredinskih štirih poljih,
 v štirih kotih, v štirih sosedih kotov v smeri urinega kazalca ($3+8+14+9$), v
@@ -194,7 +210,7 @@ simetričnih parov ($2+8+9+15$ in $3+5+12+14$), in še na nekaj drugih načinov.
 %    4 & 15 & 14 &  1 \\\hline
 
 Pasijonska fasada na katedrali Sagrada família v Barceloni
-(glej sliko~\ref{fig:sagrada} za fotografijo) vsebuje magični kvadrat reda 4.
+(glej sliko ?? za fotografijo) vsebuje magični kvadrat reda 4.
 % sklic: fig:sagrada
 
 % Tu vstavite sliko
@@ -202,7 +218,7 @@ Pasijonska fasada na katedrali Sagrada família v Barceloni
 % - oznaka: fig:sagrada
 \begin{figure}[!ht]
    \centering
-   \caption{Pasijonska fasada, Sagrada Família}
+   \caption{Pasijonska fasada, Sagrada Familia}
    \includegraphics{sagrada.png}
    \label{fig:sagrada}
 \end{figure}
@@ -223,45 +239,44 @@ in zato kvadrat ni normalen.
 
 \section{Osnovne lastnosti}
 
- \begin{definicija}
+\begin{definicija}
       Vsoto ene vrstice, enega stolpca ali ene od glavnih diagonal
       v magičnem kvadratu imenujemo \pojem{magična konstanta}.
- \end{definicija}
+\end{definicija}
 
 % Začetek okolja izrek
+   
    \begin{izrek}
-   Magična konstanta normalnega magičnega kvadrata reda \(n\)
-   je enaka
-   \begin{equation}
-      % oznaka: eq:mc
-      \m(n) = \frac{1}{2} n(n^2+1)
-   \end{equation}
+      Magična konstanta normalnega magičnega kvadrata reda \(n\)
+      je enaka
+      \begin{equation}
+         % oznaka: eq:mc
+         \m(n) = \frac{1}{2} n(n^2+1)
+      \end{equation}
    \end{izrek}
 % Konec okolja izrek
 
-% Začetek dokaza
+% Začetek dokaza (proof nam ni treba definirati v preambuli. ker je že vključen v paletu amsthm)
    \begin{proof}
-   V normalnem magičnem kvadratu reda $n$ je vsota vseh nastopajočih
-   števil (glej~\eqref{eq:numbers} na strani~\pageref{eq:numbers}) enaka
-   $1+2+3+\dots+n^2=\sum_{k=1}^{n^2}k=\frac{1}{2}n^2(n^2+1)$. Ker imamo
-   v kvadratu $n$ vrstic z enako vsoto, je vsota števil v eni vrstici
-   enaka številu $\m(n)$. % sklica: eq:numbers, eq:numbers
+      V normalnem magičnem kvadratu reda $n$ je vsota vseh nastopajočih
+      števil (glej \ref{eq:numbers} na strani \ref{eq:numbers}) enaka
+      $1+2+3+\dots+n^2=\sum_{k=1}^{n^2}k=\frac{1}{2}n^2(n^2+1)$. Ker imamo
+      v kvadratu $n$ vrstic z enako vsoto, je vsota števil v eni vrstici
+      enaka številu $\m(n)$.
    \end{proof}
 % Konec dokaza
 
-Preprost račun pokaže, da je konstanti~\eqref{eq:mc} analogna konstanta
+Preprost račun pokaže, da je konstanti ?? analogna konstanta
 $\m(n;A,D)$ za magični kvadrat, v katerem so nameščena števila
 $A$, $A+D$, $A+2D$, \dots, $A+(n^2-1)D$, enaka % sklic: eq:mc
-\[
-\m(n;A,D) = \frac{1}{2}n(2A + D(n^2-1)).
-\]
+\[\m(n;A,D) = \frac{1}{2}n(2A + D(n^2-1)).\]
 Kvadratu v tabeli ?!? ustrezata konstanti $A=20$ in $D=1$.
 
- \begin{definicija}
+\begin{definicija}
       Če vsako od števil v normalnem magičnem kvadratu reda $n$ odštejemo
       od števila $n^2+1$, dobimo nov magični kvadrat, ki je prvotnemu
       \pojem{komplementaren}.
- \end{definicija}
+\end{definicija}
 
 Na primer, magičnemu kvadratu Lo Shu (glej tabelo ?!?) priredimo
 komplementarni kvadrat, prikazan v tabeli ?!?.
@@ -278,10 +293,10 @@ iz kvadrata Lo Shu z zrcaljenjem preko sredinske vodoravne črte.
 
 Število različnih normalnih magičnih kvadratov
 
- \begin{definicija}
+\begin{definicija}
       Pravimo, da sta dva magična kvadrata \pojem{različna}, če enega ni mogoče dobiti
       iz drugega s pomočjo zasukov oziroma zrcaljenj.
- \end{definicija}
+\end{definicija}
 
 Števila različnih normalnih magičnih kvadratov se nahajajo v tabeli~\ref{table:stevila}.
 % sklic: table:stevila
@@ -290,11 +305,12 @@ iz kvadrata Lo Shu z zrcaljenjem preko sredinske vodoravne črte.
 % - oznaka: table:stevila
 % Začetek tabele
 \begin{table}
-   \caption{Število različnih normalnih magičnih kvadratov}
-      \begin{tabular}{ccccccc}\toprule
-      & \multicolumn{5}{c}{točna vrednost} & približek \\midrule
-      red & 1 & 2 & 3 & 4 & 5 & 6 \\
-      število kvadratov & 1 & 0 & 1 & 880 & 275305224 & \((1,7745 \pm 0,0016)10^{19}\) \\\bottomrule
+   \centering
+   \caption{število različnih magičnih kvadratov}
+      \begin{tabular}{lcccccc}\toprule
+         & \multicolumn{5}{c}{točna vrednost} & približek \\\midrule
+         red & 1 & 2 & 3 & 4 & 5 & 6 \\
+         število kvadratov & 1 & 0 & 1 & 880 & 275305224 & \((1,7745 \pm 0,0016)10^{19}\) \\\bottomrule
       \end{tabular}
    \label{table:stevila}
 \end{table}
@@ -350,6 +366,7 @@ magični kvadrati redov 5, 6 in 9.
 \newpage
 
 % Tu vstavite bibliografijo
+
 \bibliographystyle{siam}
 \bibliography{magic.bib}
 
